@@ -2,6 +2,96 @@
 
 
 # 3월 27일 (4주차)
+## css 중첩구조 예:
+```css
+.container {
+  background: blanchedalmond;
+  & .foo {
+    color:red;
+
+    & .bar {
+      color:blueviolet;
+    }
+  }
+}
+```
+## export default의 예: 
+``` js
+export default function App() {
+  return (
+    <div>
+      <h1>Hello React</h1>
+      <MyButton />
+    </div>
+  )
+}
+// export default와 function을 같이쓰는 코드
+
+function App() {
+  return (
+    <div>
+      <h1>Hello React</h1>
+      <MyButton />
+    </div>
+  )
+}
+export default App;
+// export default와 function을 따로 쓰는코드
+// 같이쓰는게 가독성이 좋고 요즘의 트렌드이다.
+```
+## 한번에 여러개의 컴포넌트를 export하는 예:
+```javascript
+function Button1() {
+  return (
+    <button>Btn1</button>
+  )
+}
+function Button2() {
+  return (
+    <button>Btn2</button>
+  )
+}
+function Button3() {
+  return (
+    <button>Btn3</button>
+  )
+}
+
+export {
+  Button1, 
+  Button2, 
+  Button3
+};
+```
+
+## wrapping -> 컴포넌트를 하나의 빈 태그 또는 div태그로<br> wrapping을 해야 오류가 안남
+```js
+  let Test = () => {
+    return(
+      <>
+        <button>히히</button>
+      </>
+    )
+  }
+  // or
+  let Test1 = () => {
+    return(
+      <div>
+        <button>히히</button>
+      </div>
+    )
+  }
+``` 
+
+## 데이터 표시하기 예:
+```js
+  return(
+    <h1>
+      {user.name} 
+    </h1>
+  )
+```
+
 
 # 3월 20일 (3주차)
 ## node_modules  
