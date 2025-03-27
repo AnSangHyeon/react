@@ -5,6 +5,7 @@ import {
 } from "./ButtonLib";
 import MyButton from "./MyButton";
 import Profile from "./Profile";
+import ShoppingList from "./ShoppingList";
 
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
       <Button3 />
       <AboutPage />
       <Profile />
+      <ShoppingList />
     </div>
   )
 }
