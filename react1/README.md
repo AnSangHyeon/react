@@ -1,5 +1,51 @@
 # 202330219 안상현
 
+# 4월 3일 (5주차)
+
+## useState는 상단에서만 사용가능하다
+## useState 예:
+```jsx
+  import { useState } from 'react';
+  const [count, setCount] = useState(0);
+  // 타입 [변수, 함수] = useState(초기값);
+  // 변수의 초기값을 useState(여기)에 쓰고 
+  // 변수에 값을 할당(설정)할땐 setCount(할당할값)이렇게 사용한다
+```
+
+## useState상태값은 각각 따로움직인다 예: 
+```jsx
+// CountState.js
+import { 
+  useState 
+} from 'react';
+
+let CountState = () => {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count+1);
+  }
+
+  return (
+    <div>
+      <button onClick={handleClick}>클릭{count}번째</button>
+    </div>
+  )
+}
+export default CountState;
+// App.js
+import CountState from "./CountState";
+
+export default function App() {
+  return (
+    <div>
+      <CountState /> {/* 두개가 따로 움직임 */}
+      <CountState />
+    </div>
+  )
+}
+
+```
 
 # 3월 27일 (4주차)
 ## css 중첩구조 예:

@@ -1,5 +1,8 @@
 export default function MyButton() {
+  function handleClick() {
+    alert("You clicked me!");
+  }
   return (
-    <button>I'm a button</button>
+    <button onClick={handleClick}>I'm a button</button>
   )
 }
