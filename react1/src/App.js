@@ -1,24 +1,20 @@
-import AboutPage from "./AboutPage";
-import { 
-  Button1, 
-  Button3 
-} from "./ButtonLib";
-import MyButton from "./MyButton";
-import Profile from "./Profile";
-import ShoppingList from "./ShoppingList";
+import './App.css';
 
+function Square() {
+  <>
+    <div className="board-row">
+      <button>X</button>
+      <button>X</button>
+      <button>X</button>
+    </div>
+  </>
+}
 
 export default function App() {
   return (
-    <div>
-      <h1>Hello React</h1>
-      <MyButton /><br />
-      <Button1 />&nbsp;
-      <Button3 />
-      <AboutPage />
-      <Profile />
-      <ShoppingList />
-    </div>
+    <>
+      <Square />
+    </>
   )
 }
 
