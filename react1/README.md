@@ -1,5 +1,105 @@
 # 202330219 안상현
 
+# 4월 10일 (6주차)
+## props(프로퍼티)
+- 컴포넌트 간 데이터를 전달하는 방법
+- 부모 컴포넌트에서 자식 컴포넌트로 값을 넘겨줄 때 사용
+```jsx
+function Greeting(props) {
+  return <h1>Hello, {props.name}!</h1>;
+}
+
+export default function App() {
+  return <Greeting name="React" />; // props 전달
+}
+```
+
+## state 끌어올리기
+- 여러 개의 컴포넌트가 같은 데이터를 공유해야 할 때, <br>State를 부모 컴포넌트로 이동시키는 방법
+
+```jsx
+import { useState } from "react";
+
+function Counter({ count, onIncrement }) {
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={onIncrement}>+</button>
+    </div>
+  );
+}
+
+export default function App() {
+  const [count, setCount] = useState(0);
+
+  const handleIncrement = () => setCount(count + 1); // 상태 변경 함수
+
+  return (
+    <div>
+      <Counter count={count} onIncrement={handleIncrement} />
+      <Counter count={count} onIncrement={handleIncrement} />
+    </div>
+  );
+}
+```
+
+## .fill()
+```jsx
+Array(arrLength).fill(value, start, end)
+Array(arrLength).fill(value, start)
+Array(arrLength).fill(value)
+```
+
+## arr.slice()
+- 배열의 원하는 부분을 가져옴
+
+
+# 4월 3일 (5주차)
+
+## useState는 상단에서만 사용가능하다
+## useState 예:
+```jsx
+  import { useState } from 'react';
+  const [count, setCount] = useState(0);
+  // 타입 [변수, 함수] = useState(초기값);
+  // 변수의 초기값을 useState(여기)에 쓰고 
+  // 변수에 값을 할당(설정)할땐 setCount(할당할값)이렇게 사용한다
+```
+
+## useState상태값은 각각 따로움직인다 예: 
+```jsx
+// CountState.js
+import { 
+  useState 
+} from 'react';
+
+let CountState = () => {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count+1);
+  }
+
+  return (
+    <div>
+      <button onClick={handleClick}>클릭{count}번째</button>
+    </div>
+  )
+}
+export default CountState;
+// App.js
+import CountState from "./CountState";
+
+export default function App() {
+  return (
+    <div>
+      <CountState /> {/* 두개가 따로 움직임 */}
+      <CountState />
+    </div>
+  )
+}
+
+```
 
 # 3월 27일 (4주차)
 ## css 중첩구조 예:
