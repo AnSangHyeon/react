@@ -5,9 +5,20 @@ import {
 
 export default function Board() {
   const [squares, setSquares] = useState(Array(9).fill(null));
+  const [xIsNext, setXIsNext] = useState("x")
   function handleClick(i) {
+    if(squares[i]) {
+      return;
+    }
     const nextSquares = squares.slice()
-    nextSquares[i] = "x"
+    
+    if(xIsNext) {
+      nextSquares[i] = "x"
+      
+    } else {
+      nextSquares[i] = "o"
+    }
+    setXIsNext(!xIsNext)
     setSquares(nextSquares)
   }
   return(
