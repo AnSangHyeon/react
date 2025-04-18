@@ -1,5 +1,41 @@
 # 202330219 안상현
 
+# 4월 18일 (8주차 -> 보강)
+
+## key
+- key는 리스트를 렌더링할 때 각 요소를 고유하게 식별하기 위한 속성
+- key를 설정하면 React가 변경된 부분만 효율적으로 렌더링한다
+```jsx
+// key값을 move로 설정
+<li key={move}> 
+  <button onClick={() => jumpTo(move)}>{description}</button>
+</li>
+```
+
+## map함수
+```js
+const newArray = array.map(callback(currentValue, index, array));
+```
+- callback -> 각 요소에 적용할 함수
+  - 화살표함수(Arrow Function)를 사용하면 생략가능 
+- currentValue -> 현재 순회 중인 요소
+- index (선택적) -> 현재 요소의 인덱스
+- array (선택적) -> 원본 배열 전체
+- newArray -> map()의 결과로 생성된 새로운 배열
+
+## Frangment태그 
+- 렌더링 결과에 아무런 영향을 주지 않는 가상의 부모 요소로 사용함
+- 사용법은 두가지
+
+```jsx
+// 축약형으로 짧고 간편하지만 key속성 사용못함
+<>추가내용</> 
+
+// 정식형으로 key속성이 사용가능하지만 import해야함
+import { Fragment } from 'react';
+<Fragment>추가 내용</Fragment> 
+```
+
 # 4월 17일 (7주차)
 ## 구조 분해 할당
 - 배열이나 객체의 구조를 해체하여   
