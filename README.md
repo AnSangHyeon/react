@@ -3,9 +3,16 @@
 # 5월 8일 (10주차)
 ## <a href="https://ko.react.dev/learn/thinking-in-react">오늘의 참고자료(클릭)</a>
 
+1. UI에 영향을 주는 데이터만 state로 둔다
+    - 예: 사용자 입력값, 체크 여부 등
+2. 계산해서 만들수있는 값은 state를 사용하지마라
+    - 예: 상품 전체 목록과 검색어가 있을때 state를 만들어 계산하지않고 계산로직을 짬
+3. 모든 state는 가능한 한 상위 컴포넌트에 둔다
+    - 여러 컴포넌트가 같은 데이터를 써야 할 때 유용함
+
 <img src="https://ko.react.dev/images/docs/s_thinking-in-react_ui_outline.png">
 
-- FilterableProductTable    <- 전체를 감싸는 상위 컴포넌트
+- FilterableProductTable  <- 전체를 감싸는 상위 컴포넌트
   - SearchBar             <- 검색 입력창 컴포넌트
   - ProductTable          <- 상품 리스트 전체
     - ProductCategoryRow  <- 카테고리별 제목 (예: "사과")
