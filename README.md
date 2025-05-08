@@ -1,5 +1,25 @@
 # 202330219 안상현
 
+# 5월 8일 (10주차)
+## <a href="https://ko.react.dev/learn/thinking-in-react">오늘의 참고자료(클릭)</a>
+
+<img src="https://ko.react.dev/images/docs/s_thinking-in-react_ui_outline.png">
+
+- FilterableProductTable    <- 전체를 감싸는 상위 컴포넌트
+  - SearchBar             <- 검색 입력창 컴포넌트
+  - ProductTable          <- 상품 리스트 전체
+    - ProductCategoryRow  <- 카테고리별 제목 (예: "사과")
+    - ProductRow          <- 개별 상품 행
+
+- React로 사용자 인터페이스를 빌드할 때 `컴포넌트`라는 조각으로 나눔
+  - 비유: 로봇의 몸(app.js)에 컴포넌트라는 팔, 다리등의 부위를 붙임
+
+
+## UI를 컴포넌트 계층으로 쪼개기 핵심정리
+- 전체 화면을 역할별로 나누어, 작은 단위의 컴포넌트로 나누는 것
+- 재사용, 유지보수, 이해가 편해지는게 특징
+
+
 # 4월 18일 (8주차 -> 보강)
 
 ## key
