@@ -1,5 +1,59 @@
 # 202330219 안상현
 
+# 5월 15일 (11주차)
+### step 3: 최소한의 데이터만 이용하여 완벽하게 ui state표현하기 - 5월8일 필기에 있음
+
+## Step 4: State가 어디에 있어야 할지 정하기
+- 상태(state)를 적절한 위치에 올바르게 배치하는 방법
+- 목적 
+  - 상태를 공통 조상 컴포넌트에 올려서, 여러 컴포넌트가 함께 사용할 수 있도록 하기위함
+
+- 4단계 정리  
+  1. state가 필요한 컴포넌트를 기준으로 시작한다.
+  2. 여러 컴포넌트가 함께 쓴다면
+      - 공통 부모 컴포넌트에 state를 둔다.
+  3. 자식이 상태를 바꿔야 한다면
+      - 부모 컴포넌트에서 콜백 함수를 만들고 자식 컴포넌트에게 props로 전달해준다.
+  4. 계산으로 값을 얻을 수 있다면
+      - 굳이 state로 만들지 않는다.
+## Step 5: 역흐름 제어하기
+- 자식컴포넌트의 이벤트나 데이터를 부모컴포넌트에 props로 전달하여 부모의 state를 변경하는것
+- 자식컴포넌트에서 부모컴포넌트의 state를 변경할때의 예:
+  ```jsx
+  import { useState } from 'react';
+  import Child from './Child';
+
+  function Parent() {
+    const [count, setCount] = useState(0);
+
+    const increaseCount = () => {
+      setCount(count + 1);
+    };
+
+    return (
+      <div>
+        <h1>Count: {count}</h1>
+        <Child onIncrease={increaseCount} />
+      </div>
+    );
+  }
+
+  export default Parent;
+  // 부모
+  // 자식컴포넌트에 onIncrease이라는 이름으로 increaseCount함수를 props로 전달
+
+  function Child({ onIncrease }) {
+    return <button onClick={onIncrease}>+1 증가</button>;
+  }
+
+  export default Child;
+  // 자식
+  // 부모컴포넌트가 보낸 onIncrease이라는 props를 받고
+  // onClick(클릭)했을때 props로 전달받은 onIncrease이름의 increaseCount함수를 실행시킴
+
+  ```
+
+
 # 5월 8일 (10주차)
 ## <a href="https://ko.react.dev/learn/thinking-in-react">오늘의 참고자료(클릭)</a>
 
