@@ -1,5 +1,156 @@
 # 202330219 안상현
 
+# 5월 22일 (12주차)
+
+## 새로운 React 앱 만들기
+- react로 새로운 앱을 만들 때 사용할 수 있는 다양한 프레임워크 옵션이있습니다.  
+각 프레임워크는 특정 목적이나 플랫폼에 최적화되어 있습니다.
+
+## 1. Next.js (앱 라우터 기반)
+- Next.js는 React 아키텍처를 최대한 활용하는 `풀스택 React 프레임워크`입니다.
+  ```bash
+    npx create-next-app@latest
+  ```
+- 유지 관리
+  - Vercel
+
+- 배포 옵션
+  - Node.js 서버
+  - 서버리스 환경
+  - 정적 내보내기
+
+- 특징
+  - 서버 컴포넌트, 파일 기반 라우팅
+  - 앱 라우터 지원
+  - Vercel과 연동 시 클라우드 서비스 이용 가능
+
+## 2. React Router (v7)
+- React Router는 가장 널리 사용되는 `React용 클라이언트 라우팅 라이브러리`입니다.
+  ```bash
+  npx create-react-router@latest
+  ```
+- 유지 관리
+  - Shopify
+
+- 특징
+  - Vite와 함께 사용 가능
+  - 웹 표준 API 중심
+  - 다양한 배포 플랫폼에 최적화
+  - create-react-router로 빠른 프로젝트 시작 가능
+
+## 3. Expo (React Native 기반)
+- Expo는 네이티브 UI를 사용하여 웹 + 모바일 앱을 만들 수 있는 프레임워크입니다.
+  ```bash
+  npx create-expo-app@latest
+  ```
+- 유지 관리
+  - Expo (회사)
+
+- 지원 플랫폼
+  - Android
+  - iOS
+  - Web
+
+- 특징
+  - React Native 기반
+  - App Store 및 Play Store 제출 가능
+  - 무료 빌드 가능, 유료 클라우드 서비스 선택 가능
+
+## 4. 그 외 주목할 만한 프레임워크
+- TanStack Start (베타)
+  - 기반
+    - TanStack Router
+  - 특징
+    - 서버 사이드 렌더링(SSR)
+    - 스트리밍 지원
+    - 서버 함수 및 번들링 도구 포함
+
+- RedwoodJS
+  - 특징
+    - 사전 구성된 풀스택 앱 템플릿
+    - GraphQL 및 Prisma 통합
+    - React + Node.js 기반 풀스택 프레임워크
+
+## 1. 새로운 React 프로젝트를 시작하는 방법
+- Create React App 사용
+  ```bash
+    npx create-react-app my-app
+    cd my-app
+    npm start
+  ```
+  - 특징 
+    - 개발 서버 자동 실행
+    - JSX, Babel, Webpack 등이 자동 설정됨
+
+- Vite 사용 (더 빠르고 가볍게)
+  ```bash
+    npm create vite@latest my-app -- --template react
+    cd my-app
+    npm install
+    npm run dev
+  ```
+    - 특징
+      - 빌드 속도 매우 빠름
+      - 설정이 간단함
+
+- 두 방법 모두 React 프로젝트의 초기 설정을  
+자동으로 해주며 개발 서버까지 실행됨.
+
+## 2. 기존 프로젝트에 React를 추가하는 방법
+- 기존 HTML/JavaScript 프로젝트에 React를 추가해서 점진적으로 사용할 수 있다
+  1. React 설치
+      ```bash
+        npm install react react-dom
+      ```
+  2. HTML에 루트 요소 추가
+      ```html
+        <div id="root"></div>
+      ```
+  3. React 코드 작성 및 렌더링
+      ```js
+        import React from 'react';
+        import { createRoot } from 'react-dom/client';
+        import App from './App.js';
+
+        const root = createRoot(document.getElementById('root'));
+        root.render(<App />);
+      ```
+
+- 기존 사이트에 일부 영역에만 React를 적용할 수도 있어 유연하다
+
+## 3. 에디터를 설정하는 방법 (VS Code 기준)
+- React 개발에 가장 많이 사용되는 편집기는 `Visual Studio Code (VS Code)`이다.
+- 추천 확장 프로그램
+  - ESLint: 문법 및 코드 스타일 자동 검사
+  - Prettier: 코드 자동 정렬/포맷팅
+  - React Developer Tools (브라우저용): 컴포넌트 디버깅
+  - JavaScript / TypeScript 지원 확장 (기본 포함됨)
+
+- 추천 설정
+  - 자동 저장(On Save)
+  - 포맷팅 On Save
+  - 테마: Dark+ 또는 GitHub Theme
+
+- 이러한 설정은 생산성을 높이고 오류를 줄여준다.
+
+## 4. React 개발자 도구를 설치하는 방법
+- React 컴포넌트를 브라우저에서 실시간으로 확인하려면  
+React Developer Tools를 설치한다.
+
+- 설치 방법
+  - 크롬 웹 스토어에서 "React Developer Tools" 검색 후 설치
+  - 설치하면 브라우저 개발자 도구에 Components / Profiler 탭이 생김
+
+- 주요 기능
+  - 컴포넌트 트리 시각화
+  - 각 컴포넌트의 props, state 확인 가능
+  - 상태 변경 추적 가능
+  - 렌더링 성능 분석 (Profiler)
+
+- 개발 중 React 동작을 정확히 파악할 수 있어서 매우 유용하다.
+
+
+
 # 5월 15일 (11주차)
 ### step 3: 최소한의 데이터만 이용하여 완벽하게 ui state표현하기 - 5월8일 필기에 있음
 
